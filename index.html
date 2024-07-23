@@ -27,7 +27,7 @@
         }
 
         img {
-            width: 40%;
+            width: 40%; /* 기본 이미지 폭을 화면의 40%로 설정 */
             max-height: 100%;
             object-fit: contain;
         }
@@ -46,6 +46,13 @@
 
         button:hover {
             background-color: #ff7f69;
+        }
+
+        /* 모바일 화면에서 이미지 크기 조정 */
+        @media (max-width: 768px) {
+            img {
+                width: 60%; /* 모바일 화면에서는 이미지 폭을 60%로 설정 */
+            }
         }
     </style>
 </head>
