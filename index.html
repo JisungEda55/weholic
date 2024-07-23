@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeHolic Corp.</title>
     <style>
+        /* 폰트 정의 */
+        @font-face {
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* 전체 텍스트에 폰트 적용 */
         body {
             margin: 0;
             height: 100vh;
             background-color: #fc3c1c;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            font-family: 'LINESeedKR-Bd', sans-serif; /* 모든 텍스트에 폰트 적용 */
         }
+
         img {
-            width: 40%; /* 이미지의 폭을 화면의 40%로 설정 */
-            max-height: 100%; /* 이미지의 높이는 화면의 100%를 넘지 않도록 설정 */
-            object-fit: contain; /* 이미지가 비율을 유지하며 상하좌우에 여백이 생기도록 설정 */
+            width: 40%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #010101;
+            background-color: #f2f2f7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'LINESeedKR-Bd', sans-serif; /* 버튼 텍스트에 폰트 적용 */
+        }
+
+        button:hover {
+            background-color: #ff7f69;
         }
     </style>
 </head>
 <body>
     <img src="https://private-user-images.githubusercontent.com/157635626/351217666-9fc19a0c-1603-4eb2-9a88-82041ed6b45f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjE3MTgwODgsIm5iZiI6MTcyMTcxNzc4OCwicGF0aCI6Ii8xNTc2MzU2MjYvMzUxMjE3NjY2LTlmYzE5YTBjLTE2MDMtNGViMi05YTg4LTgyMDQxZWQ2YjQ1Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyM1QwNjU2MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lYjA3ZGNlNTNlYTYyYzc2ZDA1NjI3MmIwMTEwOGMxOTNkNzZkMGE0YjQyMmYyYmFlNzAwNTRiZWQyMDI3NjllJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.bSJiWP4ndHK8aZxjL5rfwH8gLyd-ETpJcXriwVTJF_U" alt="WeHolic White Logo" id="centerImage">
+    <button id="downloadButton">Asset Download</button>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const img = document.getElementById('centerImage');
@@ -31,6 +61,11 @@
             img.onerror = () => {
                 console.error('이미지를 로드하는 데 실패했습니다.');
             };
+
+            const downloadButton = document.getElementById('downloadButton');
+            downloadButton.addEventListener('click', () => {
+                window.location.href = 'https://github.com/user-attachments/files/16344930/WeHolic.Asset.zip';
+            });
         });
 
         // 우클릭 방지 스크립트
